@@ -1,6 +1,5 @@
-package 백준.P1725_히스토그램;
+package 백준.P1725_히스토그램_실패;
 
-import java.util.*;
 import java.io.*;
 
 public class Main {
