@@ -4,51 +4,63 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-	static int n;
-	static int[] arr;
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		n = Integer.parseInt(br.readLine());
-		arr = new int[n+1];
+    static int n;
+    static List<Top> tops = new ArrayList<>();
 
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		for (int i = 1; i <= n; i++) {
-			arr[i] = Integer.valueOf(st.nextToken());
-		}
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		bw.write(solution());
-		bw.flush();
-		bw.close();
-	}
+        n = Integer.parseInt(br.readLine());
 
-	public static String solution(){
-		int[] answer = new int[n+1];
-		Stack<Integer> stack = new Stack<>();
-		int index = 0;
-		int height = Integer.MAX_VALUE;
-		for(int i = 1; i <= n; i++){
-			if(stack.isEmpty() || stack.peek() < arr[i]){
-				answer[i] = index;
-				if(arr[i] > height){
-					answer[i] = 0;
-					height = arr[i];
-					index = i;
-				}
-			} else {
-				answer[i] = i - 1;
-				index = i - 1;
-				height = arr[i];
-				stack.clear();
-			}
-			stack.push(arr[i]);
-		}
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        for (int i = 1; i <= n; i++) {
+            tops.add(new Top(i, Integer.valueOf(st.nextToken())));
+        }
 
-		StringBuilder sb = new StringBuilder();
-		for(int i = 1; i <= n; i++){
-			sb.append(answer[i]).append(" ");
-		}
-		return sb.toString();
-	}
+        bw.write(solution());
+        bw.flush();
+        bw.close();
+    }
+
+    public static String solution() {
+        int[] answer = new int[n + 1];
+        Stack<Top> stack = new Stack<>();
+
+        for (int i = 0; i < n; i++) {
+            Top top = tops.get(i);
+
+            while(!stack.isEmpty() && stack.peek().h < top.h){
+                stack.pop();
+            }
+            if(stack.isEmpty()){
+                answer[top.index] = 0;
+            } else if (stack.peek().h == top.h){
+                answer[top.index] = stack.peek().index;
+                stack.pop();
+            } else {
+                answer[top.index] = stack.peek().index;
+            }
+            stack.push(top);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for(int i = 1; i <= n; i++){
+            sb.append(answer[i]).append(" ");
+        }
+
+        return sb.toString();
+    }
+
+    public static class Top {
+
+        int index;
+        int h;
+
+        public Top(int index, int h) {
+            this.index = index;
+            this.h = h;
+        }
+    }
 }
