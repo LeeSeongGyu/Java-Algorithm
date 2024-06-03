@@ -1,4 +1,4 @@
-package 백준.P10866_덱;
+package 백준.자료구조.P10866_덱;
 
 import java.io.*;
 import java.util.*;

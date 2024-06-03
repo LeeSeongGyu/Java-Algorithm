@@ -1,4 +1,4 @@
-package 백준.P2812_크게만들기;
+package 백준.자료구조.P2812_크게만들기;
 
 import java.util.*;
 import java.io.*;

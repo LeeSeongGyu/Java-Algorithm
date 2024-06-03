@@ -1,4 +1,4 @@
-package 백준.P1725_히스토그램_실패;
+package 백준.자료구조.P1725_히스토그램_실패;
 
 import java.io.*;
 

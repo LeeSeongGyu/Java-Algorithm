@@ -1,4 +1,4 @@
-package 백준.P10799_쇠막대기;
+package 백준.자료구조.P10799_쇠막대기;
 
 import java.io.*;
 import java.util.Stack;

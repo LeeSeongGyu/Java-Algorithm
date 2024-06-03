@@ -1,4 +1,4 @@
-package 백준.P3111_검열;
+package 백준.자료구조.P3111_검열;
 
 import java.io.*;
 import java.util.*;

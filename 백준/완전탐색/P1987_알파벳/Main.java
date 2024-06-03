@@ -1,4 +1,4 @@
-package 백준.P1987_알파벳;
+package 백준.완전탐색.P1987_알파벳;
 
 import java.io.*;
 import java.util.*;

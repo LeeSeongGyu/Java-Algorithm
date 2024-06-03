@@ -1,4 +1,4 @@
-package 백준.P2580_스도쿠;
+package 백준.완전탐색.P2580_스도쿠;
 
 import java.io.*;
 import java.util.*;

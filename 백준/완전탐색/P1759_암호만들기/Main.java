@@ -1,4 +1,4 @@
-package 백준.P1759_암호만들기;
+package 백준.완전탐색.P1759_암호만들기;
 
 import java.io.*;
 import java.util.*;

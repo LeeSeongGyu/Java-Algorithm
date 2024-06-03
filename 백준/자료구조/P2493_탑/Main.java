@@ -1,4 +1,4 @@
-package 백준.P2493_탑;
+package 백준.자료구조.P2493_탑;
 
 import java.io.*;
 import java.util.*;

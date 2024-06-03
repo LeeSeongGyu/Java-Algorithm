@@ -1,4 +1,4 @@
-package 백준.P2583_영역구하기;
+package 백준.완전탐색.P2583_영역구하기;
 
 import java.util.*;
 

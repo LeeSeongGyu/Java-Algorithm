@@ -1,4 +1,4 @@
-package 백준.P2667_단지번호붙이기;
+package 백준.완전탐색.P2667_단지번호붙이기;
 
 import java.util.*;
 

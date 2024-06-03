@@ -1,4 +1,4 @@
-package 백준.P9935_문자열폭발;
+package 백준.자료구조.P9935_문자열폭발;
 
 import java.util.*;
 import java.io.*;

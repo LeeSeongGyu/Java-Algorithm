@@ -1,4 +1,4 @@
-package 백준.P9012_괄호;
+package 백준.자료구조.P9012_괄호;
 
 import java.util.*;
 import java.io.*;
