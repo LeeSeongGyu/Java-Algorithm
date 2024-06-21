@@ -6,7 +6,8 @@ import java.util.*;
 public class Main {
 
 	static int n, c, m;
-	static Package[] arr;
+	static Package[] packages;
+	static int[] weight;
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,11 +17,12 @@ public class Main {
 		n = Integer.parseInt(st.nextToken());
 		c = Integer.parseInt(st.nextToken());
 		m = Integer.parseInt(br.readLine());
-		arr = new Package[m];
+		packages = new Package[m];
+		weight = new int[n];
 
 		for (int i = 0; i < m; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
-			arr[i] = new Package(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+			packages[i] = new Package(Integer.parseInt(st.nextToken()) - 1, Integer.parseInt(st.nextToken()) - 1, Integer.parseInt(st.nextToken()));
 		}
 
 		bw.write("" + solution());
@@ -29,7 +31,23 @@ public class Main {
 	}
 
 	public static int solution(){
+		int count = 0;
+		Arrays.sort(packages);
 
+		for(Package p: packages){
+			int max = 0;
+			for(int i = p.start; i < p.end; i++){
+				max = Math.max(max, weight[i]);
+			}
+
+			int amount = Math.min(p.amount, c - max);
+			for(int i = p.start; i < p.end; i++){
+				weight[i] += amount;
+			}
+			count += amount;
+		}
+
+		return count;
 	}
 
 	public static class Package implements Comparable<Package>{
@@ -45,7 +63,7 @@ public class Main {
 
 		@Override
 		public int compareTo(Package p){
-
+			return this.end - p.end;
 		}
 	}
 }
