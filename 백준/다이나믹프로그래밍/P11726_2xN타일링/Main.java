@@ -1,7 +1,6 @@
-package 백준.다이나믹프로그래밍.P11726_타일링;
+package 백준.다이나믹프로그래밍.P11726_2xN타일링;
 
 import java.io.*;
-import java.util.*;
 
 public class Main {
 
