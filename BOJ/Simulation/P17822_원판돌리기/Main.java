@@ -1,4 +1,4 @@
-package BOJ.P17822_원판돌리기;
+package BOJ.Simulation.P17822_원판돌리기;
 
 import java.io.*;
 import java.util.*;
