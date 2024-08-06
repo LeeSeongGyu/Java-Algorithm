@@ -1,4 +1,4 @@
-package BOJ.P23288_주사위굴리기2;
+package BOJ.Simulation.P23288_주사위굴리기2;
 
 import java.io.*;
 import java.util.*;
